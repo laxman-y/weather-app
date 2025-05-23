@@ -1,15 +1,20 @@
+import CircularProgress from '@mui/material/CircularProgress';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import './SearchBox.css';
 import { useState } from 'react';
 export default function SearchBox({ updateWeatherInfo }) {
+     const API_KEY = "d8fa1f90be6194906c29e9f7124c36cc";
+ const API_URL = "https://api.openweathermap.org/data/2.5/weather";
     let [city, setCity] = useState("");
     let [error, setError] = useState(false);
-    const API_URL = "https://api.openweathermap.org/data/2.5/weather";
-    const API_KEY = "d8fa1f90be6194906c29e9f7124c36cc";
-    
+    const [loading, setLoading] = useState(false);
+console.log("API_KEY:", API_KEY);
+console.log("API_URL:", API_URL);
+
     let getWeatherInfo = async (city) => {
         try {
+            
             let response = await fetch(`${API_URL}?q=${city}&appid=${API_KEY}&units=metric`);
             let jsonResponse = await response.json();
             if (jsonResponse.cod !== 200) {
@@ -37,6 +42,7 @@ let handleChange = (event) => {
 
 let handleSubmit = async (event) => {
     event.preventDefault();
+    setLoading(true);
     try {
         let newInfo = await getWeatherInfo(city);
         updateWeatherInfo(newInfo);
@@ -44,6 +50,7 @@ let handleSubmit = async (event) => {
     } catch (err) {
         setError(true);
     }
+    setLoading(false);
     setCity("");
 };
 
@@ -52,8 +59,10 @@ return (
         <form onSubmit={handleSubmit}>
             <TextField id="city" label="City Name" variant="outlined" required value={city} onChange={handleChange} />
             <br /> <br />
-            <Button variant="contained" type="submit">Search</Button>
+            <Button variant="contained" type="submit" disabled={loading}
+> {loading ? "Searching..." : "Search"}</Button>
             <br /> <br />
+             {loading && <CircularProgress color="primary" />}
             {error && <p style={{ color: 'red' }}>No such city found in our API!</p>}
         </form>
     </div>
