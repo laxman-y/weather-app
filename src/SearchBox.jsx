@@ -9,8 +9,6 @@ export default function SearchBox({ updateWeatherInfo }) {
     let [city, setCity] = useState("");
     let [error, setError] = useState(false);
     const [loading, setLoading] = useState(false);
-console.log("API_KEY:", API_KEY);
-console.log("API_URL:", API_URL);
 
     let getWeatherInfo = async (city) => {
         try {
