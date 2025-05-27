@@ -28,5 +28,10 @@
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^16.0.0",
     "vite": "^6.3.5"
+  },
+  "dependencies": {
+  "react": "^18.2.0",
+  "react-dom": "^18.2.0",
+  "react-tsparticles": "^2.11.1"
   }
 }
