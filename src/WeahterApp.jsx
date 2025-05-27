@@ -1,7 +1,7 @@
 import Footer from "./Footer";
 import Header from "./Header";
 import InfoBox from "./InfoBox"
-import SearchBox from "./searchBox"
+import SearchBox from "./SearchBox"
 import { useState } from "react";
 export default function WeatherApp() {
     const [WeatherInfo, setWeatherInfo] = useState({
