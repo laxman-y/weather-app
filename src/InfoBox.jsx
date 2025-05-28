@@ -17,7 +17,7 @@ export default function InfoBox({ Info }) {
 
     return (
         <div className="InfoBox">
-            <h3 style={{fontFamily: "Arial, sans-serif"}}>Weather Information</h3>
+            <h3 style={{fontFamily: "Arial, sans-serif"},{color:"white"}}>Weather Information</h3>
             <br /> <br />
             <div className='CardContainer'>
             <Card sx={{ maxWidth: 560 }}>
@@ -30,7 +30,7 @@ export default function InfoBox({ Info }) {
                     <Typography gutterBottom variant="h5" component="div">
                         {Info.city} &nbsp;{Info.humidity > 80 ? <ThunderstormIcon /> : Info.temperature > 15 ? <FlareIcon /> : <AcUnitIcon />}
                     </Typography>
-                    <Typography variant="body2" sx={{ color: 'text.secondary' }}  component="span">
+                    <Typography variant="body2" sx={{ color: 'white'}}  component="span">
                         <p>Temperature : {Info.temperature}&deg;C</p>
                         <p>Humidity : {Info.humidity}</p>
                         <p>Description : {Info.description}</p>
