@@ -22,26 +22,26 @@ const AnimatedBackground = () => {
             density: { enable: true, area: 700 },
           },
           color: { value: "#FFD700" }, // yellow-like glow
-          shape: { type: "circle" },
+          shape: { type: "star" },
           opacity: {
-            value: 0.5,
+            value: 1,
             random: true,
             anim: { enable: true, speed: 0.5, opacity_min: 0.1, sync: false }
           },
           size: {
-            value: 3,
+            value: 5,
             random: true,
           },
           links: {
             enable: true,
-            distance: 150,
+            distance: 200,
             color: "#FFD700",
             opacity: 0.3,
             width: 1,
           },
           move: {
             enable: true,
-            speed: 1.2,
+            speed: 2,
             direction: "none",
             random: false,
             straight: false,
