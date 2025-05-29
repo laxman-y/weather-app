@@ -12,6 +12,9 @@
     border: .1rem solid yellowgreen !important;
  }
  .MuiOutlinedInput-notchedOutline{
-    color: white !important;
+    border: .1rem solid yellowgreen !important;
     background : transparent !important;
+ }
+.MuiFormLabel-root{
+   color: white !important;
  }
