@@ -19,5 +19,5 @@
    color: white !important;
  }
 .MuiOutlinedInput-input{
-   color: white;
+   color: white !important;
  }
