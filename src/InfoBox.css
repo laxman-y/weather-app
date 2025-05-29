@@ -9,7 +9,9 @@
     background-color: black !important;
     color: white !important;
     background: transparent !important;
-    border: .1rem solid yellowgreen !important;
+    border-top: .1rem solid yellowgreen !important;
+    border-bottom: .1rem solid yellowgreen !important;
+    padding: 0;
  }
  .MuiOutlinedInput-notchedOutline{
     border: .1rem solid yellowgreen !important;
